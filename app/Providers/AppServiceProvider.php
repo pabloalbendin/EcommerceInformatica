@@ -6,6 +6,7 @@ use App\Models\AjusteSitio;
 use App\Models\Categoria;
 use App\Models\EnlaceFooter;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -25,6 +26,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Paginator::useBootstrapFive();
+
+        if ($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
 
         View::composer('partials.header', function ($view) {
             $categoriasMenu = Categoria::visibleEnTienda()
