@@ -10,11 +10,13 @@ class UsuarioAdminSeeder extends Seeder
 {
     public function run(): void
     {
-        Usuario::create([
-            'nombre' => 'Administrador',
-            'correo' => 'admin@admin.com',
-            'contrasena' => Hash::make('admin123'),
-            'id_rol' => 2,
-        ]);
+        Usuario::updateOrCreate(
+            ['correo' => 'admin@admin.com'],
+            [
+                'nombre' => 'Administrador',
+                'contrasena' => Hash::make('admin123'),
+                'id_rol' => 2,
+            ],
+        );
     }
 }
