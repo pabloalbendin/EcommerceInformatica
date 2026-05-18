@@ -20,11 +20,11 @@ use App\Http\Controllers\Admin\UsuarioController;
 
 
 Route::get('/login', [LoginController::class, 'verLogin'])->name('login');
-Route::post('/login', [LoginController::class, 'procesarlogin'])->name('login');
+Route::post('/login', [LoginController::class, 'procesarlogin'])->name('login.process');
 
 
 Route::get('/registro', [LoginController::class, 'verRegistro'])->name('registro');
-Route::post('/registro', [LoginController::class, 'procesarregistro'])->name('registro');
+Route::post('/registro', [LoginController::class, 'procesarregistro'])->name('registro.process');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index']);

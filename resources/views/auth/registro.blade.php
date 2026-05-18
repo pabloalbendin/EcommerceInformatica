@@ -11,7 +11,7 @@
                 <h1 class="card-title mb-3">Crear cuenta</h1>
                 <p class="section-copy mb-4">Regístrate para guardar pedidos, actualizar tus datos y comprar con más rapidez.</p>
 
-                <form method="POST" action="{{ route('registro') }}">
+                <form method="POST" action="{{ route('registro.process') }}">
                     @csrf
 
                     <div class="mb-3">
