@@ -72,6 +72,11 @@
     }
 
     function validateField(field, form) {
+        if (field.disabled || field.closest(".d-none")) {
+            setFieldValidity(field, "");
+            return "";
+        }
+
         var value = normalizeValue(field.value);
         var label = fieldLabel(field);
         var required = isRequiredField(field, form);
@@ -159,7 +164,9 @@
         return Array.from(form.querySelectorAll("input, select, textarea"))
             .filter(function (field) {
                 var type = (field.getAttribute("type") || "").toLowerCase();
-                return !field.disabled && !["hidden", "submit", "button", "reset"].includes(type);
+                return !field.disabled
+                    && !field.closest(".d-none")
+                    && !["hidden", "submit", "button", "reset"].includes(type);
             });
     }
 

@@ -266,9 +266,11 @@
                 'caja',
                 'refrigeracion'
             ];
+            var activeBlock = null;
 
             tipoWrapper.classList.toggle('d-none', !esComponente);
             tipoSelect.required = esComponente;
+            tipoSelect.disabled = !esComponente;
 
             if (!esComponente) {
                 tipoSelect.value = '';
@@ -281,9 +283,24 @@
             specsBlocks.forEach(function (key) {
                 var block = document.getElementById('specs-' + key);
                 if (block) {
-                    block.classList.toggle('d-none', tipoSelect.value !== key || !esComponente);
+                    var isActive = tipoSelect.value === key && esComponente;
+                    block.classList.toggle('d-none', !isActive);
+
+                    Array.prototype.forEach.call(block.querySelectorAll('input, select, textarea'), function (field) {
+                        field.disabled = !isActive;
+                    });
+
+                    if (isActive) {
+                        activeBlock = block;
+                    }
                 }
             });
+
+            if (!activeBlock && specsWrapper) {
+                Array.prototype.forEach.call(specsWrapper.querySelectorAll('input, select, textarea'), function (field) {
+                    field.disabled = true;
+                });
+            }
         }
 
         tipoSelect.addEventListener('change', toggleTipoComponente);
