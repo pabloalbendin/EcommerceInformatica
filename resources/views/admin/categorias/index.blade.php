@@ -113,7 +113,7 @@
     </div>
 
     @if($categorias->hasPages())
-        <div class="mt-3">
+        <div class="mt-4 admin-pagination">
             {{ $categorias->links() }}
         </div>
     @endif

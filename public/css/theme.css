@@ -795,6 +795,52 @@ svg {
     max-width: 420px;
 }
 
+.contact-page-header {
+    max-width: 760px;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form-panel,
+.contact-data-panel {
+    padding: 1.75rem;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.contact-form-panel .form-label {
+    margin-bottom: 0.55rem;
+    font-weight: 600;
+    color: rgba(15, 23, 42, 0.82);
+}
+
+.contact-form-panel .form-control {
+    background: rgba(248, 250, 252, 0.92);
+}
+
+.contact-data-panel {
+    max-width: none;
+}
+
+.contact-data-panel .contact-list > div {
+    padding: 1rem 1.1rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 250, 252, 0.96));
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 14px;
+    box-shadow: none;
+}
+
+.contact-data-panel .contact-list a,
+.contact-data-panel .contact-list span:not(.info-label) {
+    color: rgba(15, 23, 42, 0.86);
+    text-decoration: none;
+}
+
+.contact-data-panel .contact-list a:hover {
+    color: var(--primary);
+}
+
 .faq-accordion .accordion-item {
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
@@ -2424,6 +2470,29 @@ body.auth-page {
     --bs-pagination-active-border-color: rgba(34, 184, 245, 0.64);
     --bs-pagination-disabled-bg: rgba(15, 24, 40, 0.55);
     --bs-pagination-disabled-color: rgba(151, 167, 189, 0.72);
+}
+
+.admin-pagination .pagination {
+    --bs-pagination-bg: #ffffff;
+    --bs-pagination-border-color: rgba(15, 23, 42, 0.12);
+    --bs-pagination-color: rgba(15, 23, 42, 0.82);
+    --bs-pagination-hover-color: var(--primary);
+    --bs-pagination-hover-bg: rgba(15, 76, 129, 0.08);
+    --bs-pagination-hover-border-color: rgba(15, 76, 129, 0.22);
+    --bs-pagination-focus-color: var(--primary);
+    --bs-pagination-focus-bg: rgba(15, 76, 129, 0.08);
+    --bs-pagination-focus-box-shadow: 0 0 0 0.2rem rgba(15, 76, 129, 0.12);
+    --bs-pagination-active-color: #ffffff;
+    --bs-pagination-active-bg: var(--primary);
+    --bs-pagination-active-border-color: var(--primary);
+    --bs-pagination-disabled-bg: rgba(248, 250, 252, 0.92);
+    --bs-pagination-disabled-color: rgba(100, 116, 139, 0.78);
+}
+
+.admin-pagination .pagination .page-link {
+    border-radius: 10px;
+    margin: 0 0.18rem;
+    font-weight: 600;
 }
 
 .about-scene-main,

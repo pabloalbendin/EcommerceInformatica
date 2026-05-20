@@ -162,7 +162,7 @@
     </div>
 
     @if($pedidos->hasPages())
-        <div class="mt-3">
+        <div class="mt-4 admin-pagination">
             {{ $pedidos->links() }}
         </div>
     @endif

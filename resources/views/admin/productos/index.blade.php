@@ -123,7 +123,7 @@
     </div>
 
     @if($productos->hasPages())
-        <div class="mt-3">
+        <div class="mt-4 admin-pagination">
             {{ $productos->links() }}
         </div>
     @endif
