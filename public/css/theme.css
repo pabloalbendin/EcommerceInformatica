@@ -755,7 +755,7 @@ svg {
 }
 
 .about-services-band {
-    padding: 1.75rem 0 0;
+    padding: 1.75rem 0 1.25rem;
     border-top: 1px solid rgba(15, 23, 42, 0.08);
 }
 
